@@ -39,4 +39,54 @@
       height: 20px;
     }
   }
+
+  //tablet
+  @include responsive(T) {
+    &-left {
+      @include flexbox(start);
+    }
+
+    &-right {
+      @include flexbox(end);
+
+      .button-group {
+        margin-right: 24px;
+
+        .gnb-icon-button {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    &-wrapper {
+      height: 80px;
+    }
+
+    .logo {
+      position: static; //체크
+      margin-right: 32px;
+      transform: none; //체크
+
+      img {
+        height: 24px;
+      }
+    }
+
+    .btn-primary {
+      width: 88px;
+      i {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  //desktop
+  @include responsive(D) {
+    &-right {
+      .input-group {
+        width: 246px;
+        margin-right: 24px;
+      }
+    }
+  }
 }
