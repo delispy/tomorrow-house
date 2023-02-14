@@ -1,0 +1,59 @@
+.sidebar {
+  width: 240px;
+  padding: 32px 20px;
+  background-color: $white;
+
+  &-header {
+    padding: 0 12px;
+
+    .logo {
+      @include flexbox(start); //앵커영역만클릭
+
+      a {
+        display: block;
+      }
+
+      img {
+        display: block;
+        width: auto;
+        height: 20px;
+      }
+    }
+  }
+
+  &-user,
+  &-auth {
+    @include flexbox(start);
+    height: 88px; //체크
+  }
+
+  &-user {
+    a {
+      @include flexbox(start);
+      @include text-style(14, $primary);
+      width: 100%; //체크1-2
+      font-weight: 700;
+    }
+
+    .avatar-24 {
+      flex-grow: 0; //체크1-4
+      flex-shrink: 0; //체크0
+      margin-right: 8px;
+    }
+
+    .username {
+      flex-grow: 1; //체크1-3 빈공간차지해라~
+      overflow: hidden; //체크1-5
+      text-overflow: ellipsis; //체크1-6
+      white-space: nowrap; //체크1-1
+    }
+  }
+
+  &-auth {
+    @include flexbox(between);
+
+    a {
+      width: 84px;
+    }
+  }
+}
