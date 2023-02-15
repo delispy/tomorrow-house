@@ -1,14 +1,22 @@
 .sidebar {
+  $sidebar-width: 240px;
+
   position: fixed;
   top: 0;
   left: 0;
   z-index: $sidebar-level; //체크
-  width: 240px;
+  width: $sidebar-width;
   height: 100vh; //체크
   padding: 32px 20px;
-  overflow-y: auto; //체크
+  overflow-y: auto; //체크 스크롤,바y축
   background-color: $white;
+  transform: translate3d(-#{$sidebar-width}, 0, 0); //체크 사이드바 사라짐
+  transition: transform 300ms ease-in-out;
   overscroll-behavior: contain;
+
+  &.is-active {
+    transform: translate3d(0, 0, 0); //체크 사이드바 나타남
+  }
 
   &-header {
     padding: 0 12px;
