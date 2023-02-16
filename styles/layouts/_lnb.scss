@@ -1,15 +1,13 @@
 .lnb {
+  //1.기준점
   $lnb-link-padding: 8px;
   $gird-margin: $sm-margin + $gutter / 2;
-  //기준점
+
+  @include no-scrollbar;
   overflow-x: auto;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
   &-list {
-    //터지는곳
+    //2.터지는곳
     @include inline-flexbox(start); //자신의컨텐츠만큼의넓이계산
     white-space: nowrap; //한줄로 길게
     padding: 0 #{$gird-margin - $lnb-link-padding};

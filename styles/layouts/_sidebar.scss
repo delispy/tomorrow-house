@@ -1,6 +1,7 @@
 .sidebar {
   $sidebar-width: 240px;
 
+  @include no-scrollbar;
   position: fixed;
   top: 0;
   left: 0;
@@ -98,10 +99,5 @@
         }
       }
     }
-  }
-
-  &::-webkit-scrollbar {
-    //체크 취향껏
-    display: none;
   }
 }
