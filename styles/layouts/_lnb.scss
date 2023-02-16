@@ -1,6 +1,9 @@
 .lnb {
+  $lnb-link-padding: 8px;
+  $gird-margin: $sm-margin + $gutter / 2;
   //기준점
   overflow-x: auto;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -9,15 +12,17 @@
     //터지는곳
     @include inline-flexbox(start); //자신의컨텐츠만큼의넓이계산
     white-space: nowrap; //한줄로 길게
-    position: relative;
-    left: -8px;
+    padding: 0 #{$gird-margin - $lnb-link-padding};
+    margin-left: -#{$gird-margin};
+    height: 40px; //체크
+    border-bottom: 1px solid $border; //체크
   }
 
   &-item {
     &.is-active {
       a {
         color: $blue;
-        border-bottom: 2px solid $blue;
+        border-bottom-color: $blue;
       }
     }
 
@@ -25,12 +30,9 @@
       @include inline-flexbox; //자신컨텐츠만큼의넓이를 갖는다.
       @include text-style(13, $dark);
       height: 40px;
-      padding: 0 8px;
+      padding: 0 $lnb-link-padding;
       font-weight: 700;
-    }
-
-    .ic-new {
-      color: $red;
+      border-bottom: 2px solid transparent; //체크
     }
   }
 }
