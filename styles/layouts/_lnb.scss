@@ -1,12 +1,11 @@
 .lnb {
   //1.기준점
-  $lnb-height-sm: 40px;
-  $lnb-height-md: 50px;
   $lnb-link-padding: 8px;
   $gird-margin: $sm-margin + $gutter / 2;
 
   @include no-scrollbar;
   overflow-x: auto;
+  background-color: $white;
 
   &-list {
     //2.터지는곳
