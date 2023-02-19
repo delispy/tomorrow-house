@@ -47,4 +47,47 @@
     width: 100%; //체크
     height: auto;
   }
+
+  @include responsive(T) {
+    padding-right: 30px;
+
+    &-slider {
+      margin: 0 0 8px 0;
+      overflow: hidden; //체크
+      border-radius: 4px;
+    }
+
+    &-thumbnail {
+      position: static; //@include pos-center-x; ->absolute
+      transform: none; //-> translateX(-50%)
+    }
+
+    .thumbnail-list {
+      justify-content: flex-start;
+    }
+
+    .thumbnail-item {
+      margin: 0 8px 0 0;
+      &.tns-nav-active {
+        button {
+          transform: none;
+          border: 2px solid $blue; //체크b
+        }
+      }
+
+      button {
+        @include flexbox; //체크b연계-정렬
+        width: 56px;
+        height: 56px;
+        border-radius: 4px;
+        opacity: 1;
+        overflow: hidden;
+      }
+
+      img {
+        display: block;
+        width: 56px; //체크b로인하여컨텐츠의크기가줄어드는현상때문에설정
+      }
+    }
+  }
 }
