@@ -90,4 +90,33 @@
       }
     }
   }
+
+  @include responsive(D) {
+    @include flexbox(end, start); //체크flex2
+    flex-direction: row-reverse; //체크flex1
+
+    &-slider {
+      width: 500px; //체크
+      height: 500px;
+    }
+
+    &-thumbnail {
+      margin-right: 8px;
+    }
+
+    .thumbnail-list {
+      flex-direction: column;
+    }
+
+    .thumbnail-item {
+      margin-right: 0;
+      margin-bottom: 8px;
+
+      button,
+      img {
+        width: 75px; //button과 img에 크기 둘다 설정
+        height: 75px;
+      }
+    }
+  }
 }
