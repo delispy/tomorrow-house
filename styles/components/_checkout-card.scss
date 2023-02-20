@@ -23,12 +23,27 @@
     height: 20px;
     font-size: 20px; //ck
     color: $secondary;
+
+    &:hover,
+    &:active {
+      opacity: 0.4;
+    }
   }
 
   .checkout-select {
     position: relative;
     display: inline-block;
     //자신안에서움직임-별도의 넓이설정이 없기때문에 제한을 위해서
+    &:hover {
+      select {
+        border-color: $tertiary;
+      }
+
+      i {
+        color: $secondary;
+      }
+    }
+
     select {
       @include text-style(14, $primary);
       width: 72px;
@@ -39,6 +54,7 @@
       border-radius: 3px;
       border: 1px solid $border;
       appearance: none; //ck
+      transition: border-color 100ms ease-in-out;
     }
 
     i {
@@ -47,6 +63,7 @@
       font-size: 20px;
       color: $tertiary;
       pointer-events: none; //ck
+      transition: color 100ms ease-in-out;
     }
   }
 
