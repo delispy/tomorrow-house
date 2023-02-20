@@ -1,0 +1,62 @@
+.checkout-card {
+  position: relative;
+  padding: 8px 10px 8px 12px;
+  border-radius: 4px;
+  background-color: $background;
+
+  .checkout-header {
+    margin-bottom: 8px;
+  }
+
+  .checkout-title {
+    @include text-style(13, $primary);
+    padding-right: 36px - 10px; //ck
+    font-weight: 400;
+  }
+
+  .delete-button {
+    @include inline-flexbox;
+    position: absolute; //ck
+    top: 8px;
+    right: 8px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px; //ck
+    color: $secondary;
+  }
+
+  .checkout-select {
+    position: relative;
+    display: inline-block;
+    //자신안에서움직임-별도의 넓이설정이 없기때문에 제한을 위해서
+    select {
+      @include text-style(14, $primary);
+      width: 72px;
+      height: 24px;
+      padding: 0 8px;
+      line-height: 1; //ck
+      background-color: $white;
+      border-radius: 3px;
+      border: 1px solid $border;
+      appearance: none; //ck
+    }
+
+    i {
+      @include pos-center-y; //ck
+      right: 2px; //움직임
+      font-size: 20px;
+      color: $tertiary;
+      pointer-events: none; //ck
+    }
+  }
+
+  .checkout-footer {
+    @include flexbox(between);
+  }
+
+  @include responsive(D) {
+    .checkout-title {
+      @include text-style(16);
+    }
+  }
+}
