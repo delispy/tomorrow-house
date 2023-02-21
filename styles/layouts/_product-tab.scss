@@ -12,7 +12,7 @@
   }
 
   &-item {
-    width: (100% / 5); //칸
+    width: (100% / 5); //칸정렬
 
     &.is-active {
       button {
@@ -24,7 +24,7 @@
     button {
       @include flexbox; //칸정렬
       @include text-style(13, $dark);
-      width: 100%; //칸
+      width: 100%; //칸정렬
       height: 40px;
       font-weight: 700;
       white-space: nowrap; //넘침보호
@@ -38,6 +38,29 @@
     .badge {
       margin-left: 4px;
       color: $secondary;
+    }
+  }
+
+  @include responsive(T) {
+    height: 54px;
+    background-color: $background;
+    border-bottom: 0;
+
+    &-item {
+      button {
+        @include text-style(16);
+        height: 54px;
+      }
+
+      .badge {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-item button:hover {
+      color: $blue;
     }
   }
 }
