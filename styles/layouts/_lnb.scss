@@ -1,7 +1,7 @@
 .lnb {
   //1.기준점
   $lnb-link-padding: 8px;
-  $gird-margin: $sm-margin + $gutter / 2;
+  $grid-margin: $sm-margin + $gutter / 2;
 
   @include no-scrollbar;
   overflow-x: auto;
@@ -11,8 +11,8 @@
     //2.터지는곳
     @include inline-flexbox(start); //자신의컨텐츠만큼의넓이계산
     white-space: nowrap; //한줄로 길게
-    padding: 0 #{$gird-margin - $lnb-link-padding};
-    margin-left: -#{$gird-margin};
+    padding: 0 #{$grid-margin - $lnb-link-padding};
+    margin-left: -#{$grid-margin};
     height: $lnb-height-sm; //체크
     border-bottom: 1px solid $border; //체크
   }
