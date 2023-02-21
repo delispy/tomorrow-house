@@ -1,0 +1,43 @@
+.product-tab {
+  $grid-margin: $sm-margin + $gutter / 2;
+
+  width: 100%;
+  height: 40px;
+  background-color: $white;
+  border-bottom: 1px solid $border;
+
+  &-list {
+    @include flexbox;
+    margin: 0 -#{$grid-margin}; // 그리드설정무시하고늘려줌
+  }
+
+  &-item {
+    width: (100% / 5); //칸
+
+    &.is-active {
+      button {
+        color: $blue;
+        border-bottom-color: $blue; //보더이슈-컨텐츠줄어드는..
+      }
+    }
+
+    button {
+      @include flexbox; //칸정렬
+      @include text-style(13, $dark);
+      width: 100%; //칸
+      height: 40px;
+      font-weight: 700;
+      white-space: nowrap; //넘침보호
+      border-bottom: 2px solid transparent; //보더이슈설정
+
+      &:active {
+        color: $blue;
+      }
+    }
+
+    .badge {
+      margin-left: 4px;
+      color: $secondary;
+    }
+  }
+}
