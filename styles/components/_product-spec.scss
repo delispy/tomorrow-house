@@ -1,5 +1,42 @@
 .product-spec {
+  position: relative;
+  height: 470px; //펼치기전화면작업
   padding-top: 20px;
+  overflow: hidden; //펼치기전화면작업
+
+  &.is-open {
+    height: auto; //펼쳐진화면복귀
+
+    .button-wrapper {
+      display: none;
+    }
+  }
+
+  .button-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; //버튼넓이조정
+    padding-bottom: 20px;
+    background-color: $white; //pb20px로인한이미지돌출제거
+
+    &::before {
+      //그라데이션설정
+      //가상요소는 기본적으로 inline임
+      position: absolute;
+      bottom: 20px + 55px;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 64px;
+      background: linear-gradient(to top, $white 0%, transparent 100%);
+      content: '';
+    }
+
+    button {
+      width: 100%; //버튼넓이조정
+    }
+  }
 
   .product-table {
     margin-top: 20px;
