@@ -37,8 +37,11 @@
         .active-bar {
           width: 0;
           height: 5px;
-          border-radius: (5px / 2);
           background-color: $blue;
+          border-radius: (5px / 2);
+          animation-duration: 1000ms;
+          animation-name: slide-active-bar;
+          //에니메이션효과
         }
       }
 
@@ -59,6 +62,17 @@
           margin-right: 8px;
         }
       }
+    }
+  }
+
+  @keyframes slide-active-bar {
+    //width,margin,height는 애니메이션효과와 궁합이 최악. transform의 translate3d활용
+    0% {
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(0, 0, 0);
     }
   }
 }
