@@ -61,8 +61,8 @@
     a,
     button {
       @extend %page-item-base;
-      min-width: 26px; //체크
-      padding: 0 4px;
+      min-width: 26px; //page숫자가증가하면넓이가증가하기때문
+      padding: 0 4px 2px;
 
       &:hover {
         color: $blue;
