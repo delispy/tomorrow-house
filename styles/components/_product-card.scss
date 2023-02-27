@@ -1,14 +1,23 @@
 .product-card {
   &-image {
+    position: relative;
+    width: 100%; //0반응형이미지...
+    height: 0; //1반응형이미지높이...
+    padding-bottom: 100%;
+    //2반응형이미지종횡비맞추기패딩은넓이기준-패딩100%-정사각형비율됨
     margin-bottom: 8px;
     overflow: hidden;
     border-radius: 4px;
 
     img {
+      @include pos-center; //5적용된비율에이미지나타내기
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      //4반응형이미지높이...부모높이기준..여기선auto대신100%
+      //넓이와 높이의 기준이 다르다.
       transition: transform 200ms ease-in-out;
+      object-fit: cover; //6
     }
   }
 
