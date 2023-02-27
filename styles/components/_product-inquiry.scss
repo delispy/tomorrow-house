@@ -1,4 +1,9 @@
 .product-inquiry {
+  .inquiry-empty {
+    @include text-style(16, $secondary);
+    padding: 48px 0;
+    text-align: center;
+  }
   @include mobile-only {
     //responsive 믹스인에 추가
     padding-bottom: 0;
@@ -17,6 +22,12 @@
     .product-section-header .text-button,
     .product-section-content {
       display: none;
+    }
+  }
+
+  @include responsive(T) {
+    .inquiry-empty {
+      padding: 28px 0;
     }
   }
 }
