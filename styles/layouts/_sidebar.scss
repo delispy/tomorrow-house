@@ -58,10 +58,8 @@
     }
 
     .username {
+      @include truncate;
       flex-grow: 1; //체크1-3 빈공간차지해라~
-      overflow: hidden; //체크1-5
-      text-overflow: ellipsis; //체크1-6
-      white-space: nowrap; //체크1-1
     }
   }
 
