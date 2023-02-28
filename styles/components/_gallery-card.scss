@@ -1,0 +1,46 @@
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+
+  &-image {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &-detail {
+    @include flexbox(start);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 54px;
+    //포지션설정후별도의넓이설정이없으면자신의콘텐츠영역만큼차지줄어듬 설정복구
+    padding: 0 16px;
+    background-color: rgba($black, 0.4);
+
+    .avatar-32,
+    .order {
+      flex-shrink: 0; //1찌그러짐방지-자기사이즈유지
+    }
+
+    .username,
+    .order {
+      @include text-style(16, $white);
+    }
+
+    .avatar-32 {
+      margin-right: 8px;
+    }
+
+    .username {
+      @include truncate;
+      flex-grow: 1; //2공간을늘린다
+      padding-right: 8px;
+      font-weight: 700;
+    }
+  }
+}
