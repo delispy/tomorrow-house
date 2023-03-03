@@ -1,5 +1,7 @@
 const orderCta = document.querySelector('.order-cta')
 const [orderCtaBookmarkButton, orderCtaBuyButton] = orderCta.children
+// const orderCtaBuyButton = orderCta.children[1]
+// const orderCtaBookmarkButton = orderCta.children[0]
 
 const orderModal = document.querySelector('.order-form-modal')
 const orderModalOverlay = document.querySelector('.overlay')
@@ -17,3 +19,31 @@ function closeOrderModal() {
 }
 
 orderModalOverlay.addEventListener('click', closeOrderModal)
+
+function toggleOrderCtaBookmark() {
+  // 1. 버튼 is-active
+  // 2. icon 클래스 변경 ic-bookmark vs ic-bookmark-filled
+  // 3. 카운트 숫자 값을 변경
+  const [icon, countSpan] = this.children //아이콘, 카운트span
+  const count = Number(countSpan.innerHTML.replaceAll(',', ''))
+
+  let newCount = count
+
+  if (this.classList.contains('is-active')) {
+    // NOTE: 활성화가 된 상태이니 -> 비활성화 (ic-bookmark), bm -1
+    icon.classList.add('ic-bookmark')
+    icon.classList.remove('ic-bookmark-filled')
+    newCount = newCount - 1
+  } else {
+    // NOTE: 비활성화가 된 상태이니 -> 활성화 (ic-bookmark-filled), bm +1
+    icon.classList.add('ic-bookmark-filled')
+    icon.classList.remove('ic-bookmark')
+    newCount = newCount + 1
+  }
+
+  countSpan.innerHTML = newCount.toLocaleString()
+
+  this.classList.toggle('is-active')
+}
+
+orderCtaBookmarkButton.addEventListener('click', toggleOrderCtaBookmark)
