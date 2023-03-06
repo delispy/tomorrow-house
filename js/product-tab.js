@@ -81,7 +81,6 @@ function detectTabPanelPosition() {
 }
 
 function updateActiveTabOnScroll() {
-  console.log(111)
   // 스크롤 위치에 따라서 activeTab 업데이트
   // 1. 현재 유저가 얼마만큼 스크롤을 했느냐 -> window.scrollY
   // 2. 각 tabPanel y축 위치 -> productTabPanelPositionMap
